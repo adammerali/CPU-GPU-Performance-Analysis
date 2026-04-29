@@ -4,9 +4,7 @@ Built to monitor GPU/CPU performance on my Lenovo Yoga 7 on games so I can retur
 
 Shows real-time graphs for GPU utilization, VRAM, temperature, power, clocks, CPU usage, and RAM.
 
-Works with Nvidia/AMD GPU's and with any iGPU's. (tested on igpu and nvidia gpu)
-
-Exposes extra statistics like CPU interrupts and GPU busy not typically available in MSI Afterburner or Steam overlay. Brings all system and frame metrics into one tool with real-time graphs and CSV logging.
+Works with Nvidia/AMD GPU's and with any iGPU's (tested on igpu and nvidia gpu). Also Has extra stats like CPU interrupts and GPU busy which you can't see in MSI Afterburner or Steam overlay. All graphs in one tool + csv logging.
 
 ## Build
 
