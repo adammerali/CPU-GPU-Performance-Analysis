@@ -1,8 +1,8 @@
 # CPU-GPU Performance Analysis Tool
 
-Built to monitor GPU/CPU performance on my Lenovo Yoga 7 while gaming. Shows real-time graphs for GPU utilization, VRAM, temperature, power, clocks, CPU usage, and RAM.
+Real-time performance monitor built in C++ with an ImGui overlay. Made to track how my Lenovo Yoga 7 handles games — shows live scrolling graphs for GPU utilization, VRAM usage, temperature, power draw, clock speeds, CPU usage, and RAM.
 
-Works with NVIDIA, AMD, and Intel integrated GPUs.
+Automatically detects your GPU vendor at startup and uses the right API — no config needed. Supports NVIDIA (via NVML), AMD (via ADLX), and Intel integrated GPUs (via PDH counters).
 
 ## Build
 
@@ -15,9 +15,10 @@ cmake -S . -B build -G "Visual Studio 17 2022" -A x64
 cmake --build build --config Release
 ```
 
-### GPU SDK setup (optional)
+Runs without any extra SDKs — GPU metrics just won't show until you set one up below.
 
-- **NVIDIA:** Install the [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads). `nvml.dll` is already on your system with the driver.
-- **AMD:** Download the [ADLX SDK](https://github.com/GPUOpen-LibrariesAndSDKs/ADLX/releases), put `SDK/Include/*` in `third_party/adlx/include/` and `SDK/Lib/x64/amd_adlx.lib` in `third_party/adlx/lib/`.
+## GPU SDK setup
 
-Builds fine without any SDKs — just shows "No GPU SDK available".
+- **NVIDIA:** Install the [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads). `nvml.dll` ships with your driver so nothing extra is needed at runtime.
+- **AMD:** Download the [ADLX SDK](https://github.com/GPUOpen-LibrariesAndSDKs/ADLX/releases), copy `SDK/Include/*` to `third_party/adlx/include/` and `SDK/Lib/x64/amd_adlx.lib` to `third_party/adlx/lib/`, then rebuild.
+- **Intel iGPU:** No SDK needed — uses Windows PDH counters built into the OS.
