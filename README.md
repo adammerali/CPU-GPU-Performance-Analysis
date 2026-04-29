@@ -9,8 +9,8 @@ Automatically detects your GPU vendor at startup and uses the right API — no c
 Requires Visual Studio 2022, CMake 3.20+, Git.
 
 ```bash
-git clone --recurse-submodules https://github.com/adammerali/CPU-GPU-Performance-Analysis.git
-cd CPU-GPU-Performance-Analysis
+git clone --recurse-submodules https://github.com/adammerali/SysMonitor.git
+cd SysMonitor
 cmake -S . -B build -G "Visual Studio 17 2022" -A x64
 cmake --build build --config Release
 ```
